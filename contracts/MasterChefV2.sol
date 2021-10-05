@@ -32,7 +32,7 @@ contract MasterChefV2 is Ownable, ReentrancyGuard {
         //   pending reward = (user.amount * pool.accLaboPerShare) - user.rewardDebt
         //
         // Whenever a user deposits or withdraws LP tokens to a pool. Here's what happens:
-        //   1. The pool's `accLaboPerShare` (and `lastRewardBlock`) gets updated.
+        //   1. The pool's `accMisPerShare` (and `lastRewardBlock`) gets updated.
         //   2. User receives the pending reward sent to his/her address.
         //   3. User's `amount` gets updated.
         //   4. User's `rewardDebt` gets updated.
@@ -43,7 +43,7 @@ contract MasterChefV2 is Ownable, ReentrancyGuard {
         IBEP20 lpToken;           // Address of LP token contract.
         uint256 allocPoint;       // How many allocation points assigned to this pool. LABOs to distribute per block.
         uint256 lastRewardBlock;  // Last block number that LABOs distribution occurs.
-        uint256 accLaboPerShare;   // Accumulated LABOs per share, times 1e12. See below.
+        uint256 accLaboPerShare;   // Accumulated MIS per share, times 1e12. See below.
         uint16 depositFeeBP;      // Deposit fee in basis points
     }
 
@@ -64,7 +64,7 @@ contract MasterChefV2 is Ownable, ReentrancyGuard {
     mapping(uint256 => mapping(address => UserInfo)) public userInfo;
     // Total allocation points. Must be the sum of all allocation points in all pools.
     uint256 public totalAllocPoint = 0;
-    // The block number when LABO mining starts.
+    // The block number when MIS mining starts.
     uint256 public startBlock;
 
     event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
@@ -120,7 +120,7 @@ contract MasterChefV2 is Ownable, ReentrancyGuard {
         }));
     }
 
-    // Update the given pool's LABO allocation point and deposit fee. Can only be called by the owner.
+    // Update the given pool's MIS allocation point and deposit fee. Can only be called by the owner.
     function set(uint256 _pid, uint256 _allocPoint, uint16 _depositFeeBP, bool _withUpdate) public onlyOwner {
         require(_depositFeeBP <= 10000, "set: invalid deposit fee basis points");
         if (_withUpdate) {
@@ -136,7 +136,7 @@ contract MasterChefV2 is Ownable, ReentrancyGuard {
         return _to.sub(_from).mul(BONUS_MULTIPLIER);
     }
 
-    // View function to see pending LABOs on frontend.
+    // View function to see pending MIS on frontend.
     function pendingLabo(uint256 _pid, address _user) external view returns (uint256) {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][_user];
@@ -177,7 +177,7 @@ contract MasterChefV2 is Ownable, ReentrancyGuard {
         pool.lastRewardBlock = block.number;
     }
 
-    // Deposit LP tokens to MasterChef for LABO allocation.
+    // Deposit LP tokens to MasterChef for MIS allocation.
     function deposit(uint256 _pid, uint256 _amount, address _to) public nonReentrant {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][_to];
@@ -231,7 +231,7 @@ contract MasterChefV2 is Ownable, ReentrancyGuard {
         emit EmergencyWithdraw(msg.sender, _pid, amount);
     }
 
-    // Safe labo transfer function, just in case if rounding error causes pool to not have enough LABOs.
+    // Safe mis transfer function, just in case if rounding error causes pool to not have enough MIS.
     function safeLaboTransfer(address _to, uint256 _amount) internal {
         uint256 laboBal = labo.balanceOf(address(this));
         bool transferSuccess = false;
