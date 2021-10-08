@@ -660,7 +660,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/artemis-contracts/contracts/MasterChefV2.sol": "MasterChefV2"
+			"contracts/artemis-contracts/artemis-contracts/contracts/MasterChefV2.sol": "MasterChefV2"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -714,22 +714,22 @@
 				"dweb:/ipfs/QmVzaxJZY51EhagrcNnkxoU6Uq17RhATe7aHvtkC6wUkgK"
 			]
 		},
-		"contracts/artemis-contracts/contracts/ArtemisToken.sol": {
+		"contracts/artemis-contracts/artemis-contracts/contracts/ArtemisToken.sol": {
 			"keccak256": "0xc923a5b56daa24ccb9379b675e0d757e54eb42d697cfcf9e69293a96f4e11d9e",
 			"urls": [
 				"bzz-raw://9ea9ead155b0a20c824b57be96c09efb08a2f3da54a5f192af43d9241020d60c",
 				"dweb:/ipfs/Qmcq7ahqBEbL4C2Q35kkpWBuZNhKijrmgx8MYFycBexM7v"
 			]
 		},
-		"contracts/artemis-contracts/contracts/MasterChefV2.sol": {
-			"keccak256": "0x9e1620a4cd50862160809e9d3e7d8f765ff09b8c46295d8a55c95063a3680d31",
+		"contracts/artemis-contracts/artemis-contracts/contracts/MasterChefV2.sol": {
+			"keccak256": "0xe417009988c773e268cd86852819760511381dfde685fa4278793544155da799",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://873b4fa4d2b5d147ebf775cfd412d392d70dfebc2a9595eec4667df30e2d8b24",
-				"dweb:/ipfs/QmSkHnkSnGzYWGMCA6hcZwLyEKrtuMZSnfQh7tdAjACpG9"
+				"bzz-raw://f314a999fe9a56e37daebeb883f7a1f7bd629acc03aaa7a62c29114f10429580",
+				"dweb:/ipfs/QmTf8zGfpMRfbGaVkUSY4dMhZ7S8Up7Hp5TovoAWPCeVKa"
 			]
 		},
-		"contracts/artemis-contracts/contracts/libs/BEP20.sol": {
+		"contracts/artemis-contracts/artemis-contracts/contracts/libs/BEP20.sol": {
 			"keccak256": "0xc145a563f1b87349a686e7a6e089df0df593c2097a50effcb5e1c8b46aef4dd8",
 			"license": "MIT",
 			"urls": [
@@ -737,14 +737,14 @@
 				"dweb:/ipfs/QmZxPJTR2unwPfmR98JrGZma2V2Ebf8zzM9JdDcat6mqTu"
 			]
 		},
-		"contracts/artemis-contracts/contracts/libs/IBEP20.sol": {
+		"contracts/artemis-contracts/artemis-contracts/contracts/libs/IBEP20.sol": {
 			"keccak256": "0x1466ba22461d84dbe68084723e4faf2b1a2aecabdf9b54cb532cbc38200ae74c",
 			"urls": [
 				"bzz-raw://ea60fdada0a3ca0fa073d55bb3864e5980592469d8efe84db3fc104cd598132c",
 				"dweb:/ipfs/QmSVg74Pq9icQfuTB6fsRZkeF9E9CeNDDGTnHLEiN5waCd"
 			]
 		},
-		"contracts/artemis-contracts/contracts/libs/SafeBEP20.sol": {
+		"contracts/artemis-contracts/artemis-contracts/contracts/libs/SafeBEP20.sol": {
 			"keccak256": "0xfe10bcf9de0175d5748035e1e087ce8d1527e35239406ad2fbb89b891120f036",
 			"license": "MIT",
 			"urls": [
