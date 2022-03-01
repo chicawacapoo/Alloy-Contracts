@@ -3,7 +3,7 @@ pragma solidity 0.6.12;
 import "./libs/BEP20.sol";
 
 // EggToken with Governance.
-contract ArtemisToken is BEP20('Artemis', 'MIS') {
+contract AlloyToken is BEP20('Alloy', 'ALY') {
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
@@ -134,7 +134,7 @@ contract ArtemisToken is BEP20('Artemis', 'MIS') {
 
     /**
      * @notice Determine the prior number of votes for an account as of a block number
-     * @dev Block number must be a finalized block or else this function will revert to prevent misinformation.
+     * @dev Block number must be a finalized block or else this function will revert to prevent information.
      * @param account The address of the account to check
      * @param blockNumber The block number to get the vote balance at
      * @return The number of votes the account had as of the given block
